@@ -1,38 +1,74 @@
 {% set name = "awkward" %}
-{% set version = "0.7.0" %}
+{% set version = "0.8.0" %}
+{% set build_number = 0 %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}_and_variants
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0111190b3d8fa5f3143b90279a5aad09bbb652b25cbfcf8f48aaf323b450a63c
+  - url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+    sha256: f00b31328f326d4125a1820e4deefef92642035c48ebaaa28da4070fc7858441
+    folder: {{ name }}
+  - url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}-numba/{{ name }}-numba-{{ version }}.tar.gz
+    sha256: 14841d9fbbbfe603fbb5091a0bd6df2595664ceb1545437c0e61b10a3b082e11
+    folder: {{ name }}-numba
 
 build:
-  number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  number: {{ build_number }}
   noarch: python
 
+# Specifying `python` as a top-level build requirements to force conda to
+# render the recipe correctly
 requirements:
   build:
-  host:
     - python
-    - pip
-    - pytest-runner
-  run:
-    - python
-    - numpy >=1.13.1
 
-test:
-  imports:
-    - awkward
+outputs:
+  - name: {{ name }}
+    version: {{ version }}
+    build:
+      number: {{ build_number }}
+      script: "{{ PYTHON }} -m pip install {{ name }} --no-deps -vv"
+      noarch: python
+    requirements:
+      build:
+      host:
+        - python
+        - pip
+        - pytest-runner
+      run:
+        - python
+        - numpy >=1.13.1
+    test:
+      imports:
+        - awkward
+
+  - name: {{ name }}-numba
+    version: {{ version }}
+    build:
+      number: {{ build_number }}
+      script: "{{ PYTHON }} -m pip install {{ name }}-numba --no-deps -vv"
+      noarch: python
+    requirements:
+      build:
+      host:
+        - python
+        - pip
+        - pytest-runner
+      run:
+        - python
+        - numba
+        - awkward =={{ version }}
+    test:
+      imports:
+        - awkward.numba
 
 about:
   home: https://github.com/scikit-hep/{{ name }}
   license: BSD-3-Clause
   license_family: BSD
-  license_file: LICENSE
+  license_file: {{ name }}/LICENSE
   summary: 'Manipulate arrays of complex data structures as easily as Numpy.'
   dev_url: https://github.com/scikit-hep/{{ name }}
 
