@@ -15,6 +15,7 @@ source:
     folder: {{ name }}-numba
 
 build:
+  number: {{ build_number }}
   noarch: python
 
 # Specifying `python` as a top-level build requirements to force conda to
