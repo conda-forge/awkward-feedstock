@@ -1,5 +1,5 @@
 {% set name = "awkward" %}
-{% set version = "0.12.9" %}
+{% set version = "0.12.10" %}
 {% set build_number = 0 %}
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-    sha256: e0997b848b7cad10b2511eeb06b575f83f22b35fa348ab27096f7ec6746c73b5
+    sha256: baa372577963019407d005f567bd35f4a3f38df76e5dc20761befa3c6588ee3c
     folder: {{ name }}
   - url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}-numba/{{ name }}-numba-{{ version }}.tar.gz
-    sha256: 63e644c6f0a8402ed102efbeb8b593708af3a3727ada68124fcd91cb1eec8cf2
+    sha256: f448634dd6b2c3514f7685d719e3d40abf8cbb52b6752351bff1c37d17e3035d
     folder: {{ name }}-numba
 
 build:
