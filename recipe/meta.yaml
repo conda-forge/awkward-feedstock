@@ -3,7 +3,7 @@
 {% set build_number = 0 %}
 
 package:
-  name: {{ name }}_and_variants
+  name: {{ name }}
   version: {{ version }}
 
 source:
@@ -58,7 +58,7 @@ outputs:
         - pytest-runner
       run:
         - python
-        - numba
+        - numba <0.46
         - awkward =={{ version }}
     test:
       imports:
