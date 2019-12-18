@@ -21,7 +21,9 @@ build:
 # Specifying `python` as a top-level build requirements to force conda to
 # render the recipe correctly
 requirements:
-  build:
+  host:
+    - python
+  run:
     - python
 
 outputs:
