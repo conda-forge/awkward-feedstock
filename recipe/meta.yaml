@@ -8,10 +8,10 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-    sha256: 9b3df4f2be92ac7d16709f15769c97591f25f0442061f1a4cc8715feb268e45c
+    sha256: 8540931484d5aee20430ca30c46dba03745050acaf23eeee795f1620904ae2e8
     folder: {{ name }}
   - url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}-numba/{{ name }}-numba-{{ version }}.tar.gz
-    sha256: cd3560cf4c3295e8f2db1d0fef4b76dc0d39fd0573c14a6e4f8421023ded3308
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
     folder: {{ name }}-numba
 
 build:
