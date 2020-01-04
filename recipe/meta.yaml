@@ -11,7 +11,7 @@ source:
     sha256: 8540931484d5aee20430ca30c46dba03745050acaf23eeee795f1620904ae2e8
     folder: {{ name }}
   - url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}-numba/{{ name }}-numba-{{ version }}.tar.gz
-    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    sha256: 1702a92b5a89b445fc6c95faf7318510b8bb0973468561e198279bb306baa899
     folder: {{ name }}-numba
 
 build:
