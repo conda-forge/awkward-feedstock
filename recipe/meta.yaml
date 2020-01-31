@@ -1,5 +1,5 @@
 {% set name = "awkward" %}
-{% set version = "0.12.19" %}
+{% set version = "0.12.20" %}
 {% set build_number = 0 %}
 
 package:
