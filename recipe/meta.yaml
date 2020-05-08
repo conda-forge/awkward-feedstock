@@ -1,5 +1,5 @@
 {% set name = "awkward" %}
-{% set version = "0.12.20" %}
+{% set version = "0.12.21" %}
 {% set build_number = 0 %}
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-    sha256: 636d786fd0e5ca830dca89767ede6bb1045a1881e5a413ba751899ffed25898c
+    sha256: 1253f1d85bda79a45d209ea467e4ba6fcaa5354c317c194945dc354a259f5aa8
     folder: {{ name }}
   - url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}-numba/{{ name }}-numba-{{ version }}.tar.gz
-    sha256: 82293224f00fd5028fae3c95f1241657f7b1e817f9a7421c7fd1f3537c82dfb6
+    sha256: 5ad28ae2f971ba06de3e73d2bbf6ab7c4f4962323c9af516bab9391ada3463fd
     folder: {{ name }}-numba
 
 build:
@@ -31,7 +31,7 @@ outputs:
     version: {{ version }}
     build:
       number: {{ build_number }}
-      script: "{{ PYTHON }} -m pip install {{ name }} --no-deps -vv"
+      script: {{ PYTHON }} -m pip install {{ name }} --no-deps -vv
       noarch: python
     requirements:
       build:
@@ -50,7 +50,7 @@ outputs:
     version: {{ version }}
     build:
       number: {{ build_number }}
-      script: "{{ PYTHON }} -m pip install {{ name }}-numba --no-deps -vv"
+      script: {{ PYTHON }} -m pip install {{ name }}-numba --no-deps -vv
       noarch: python
     requirements:
       build:
@@ -71,7 +71,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: {{ name }}/LICENSE
-  summary: 'Manipulate arrays of complex data structures as easily as Numpy.'
+  summary: Manipulate arrays of complex data structures as easily as Numpy.
   dev_url: https://github.com/scikit-hep/{{ name }}
 
 extra:
