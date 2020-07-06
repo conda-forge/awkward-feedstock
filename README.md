@@ -5,7 +5,7 @@ Home: https://github.com/scikit-hep/awkward
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Manipulate arrays of complex data structures as easily as Numpy.
 
