@@ -30,7 +30,6 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-awkward-green.svg)](https://anaconda.org/conda-forge/awkward) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/awkward.svg)](https://anaconda.org/conda-forge/awkward) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/awkward.svg)](https://anaconda.org/conda-forge/awkward) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/awkward.svg)](https://anaconda.org/conda-forge/awkward) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-awkward--numba-green.svg)](https://anaconda.org/conda-forge/awkward-numba) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/awkward-numba.svg)](https://anaconda.org/conda-forge/awkward-numba) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/awkward-numba.svg)](https://anaconda.org/conda-forge/awkward-numba) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/awkward-numba.svg)](https://anaconda.org/conda-forge/awkward-numba) |
 
 Installing awkward
 ==================
@@ -41,10 +40,10 @@ Installing `awkward` from the `conda-forge` channel can be achieved by adding `c
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `awkward, awkward-numba` can be installed with:
+Once the `conda-forge` channel has been enabled, `awkward` can be installed with:
 
 ```
-conda install awkward awkward-numba
+conda install awkward
 ```
 
 It is possible to list all of the versions of `awkward` available on your platform with:
