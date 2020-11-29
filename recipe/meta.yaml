@@ -69,7 +69,7 @@ outputs:
 about:
   home: https://github.com/scikit-hep/{{ name }}
   license: BSD-3-Clause
-  license_file: {{ name }}/LICENSE
+  license_file: LICENSE
   summary: Manipulate arrays of complex data structures as easily as Numpy.
   dev_url: https://github.com/scikit-hep/{{ name }}
 
