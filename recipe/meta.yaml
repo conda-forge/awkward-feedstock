@@ -26,6 +26,10 @@ requirements:
   run:
     - python
 
+test:
+  imports:
+    - awkward0
+
 outputs:
   - name: {{ name }}
     version: {{ version }}
