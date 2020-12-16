@@ -29,8 +29,8 @@ requirements:
 
 test:
   imports:
-    - awkward1
-    - awkward1._connect
+    - awkward
+    - awkward._connect
   commands:
     - pip check
   requires:
