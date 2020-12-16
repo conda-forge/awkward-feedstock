@@ -1,80 +1,50 @@
 {% set name = "awkward" %}
-{% set version = "0.14.0" %}
-{% set build_number = 0 %}
+{% set version = "1.0.1" %}
+
 
 package:
-  name: {{ name }}
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  - url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-    sha256: 6a3878f46e8bc2acf28a0b9feb69d354ad2fee2a2a0f65c48c115aa74f245204
-    folder: {{ name }}
-  - url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}-numba/{{ name }}-numba-{{ version }}.tar.gz
-    sha256: ade7fe77f1a863658b31579f66aca94726eb8194506bb5666cf4b160b8cc98d1
-    folder: {{ name }}-numba
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/awkward-{{ version }}.tar.gz
+  sha256: d856b4a166ae054363368aed2e4a44338fec069baa4242e7d567c8323ebcc1eb
 
 build:
-  number: {{ build_number }}
-  noarch: python
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
 
-# Specifying `python` as a top-level build requirements to force conda to
-# render the recipe correctly
 requirements:
+  build:
+    - cmake
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - make  # [unix]
   host:
+    - pip
     - python
   run:
+    - numpy >=1.13.1
     - python
 
-outputs:
-  - name: {{ name }}
-    version: {{ version }}
-    build:
-      number: {{ build_number }}
-      script: {{ PYTHON }} -m pip install {{ name }} --no-deps -vv
-      noarch: python
-    requirements:
-      build:
-      host:
-        - python
-        - pip
-        - pytest-runner
-      run:
-        - python
-        - numpy >=1.13.1
-    test:
-      imports:
-        - awkward
-
-  - name: {{ name }}-numba
-    version: {{ version }}
-    build:
-      number: {{ build_number }}
-      script: {{ PYTHON }} -m pip install {{ name }}-numba --no-deps -vv
-      noarch: python
-    requirements:
-      build:
-      host:
-        - python
-        - pip
-        - pytest-runner
-      run:
-        - python
-        - numba <0.46
-        - awkward =={{ version }}
-    test:
-      imports:
-        - awkward.numba
+test:
+  imports:
+    - awkward
+    - awkward._connect
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
-  home: https://github.com/scikit-hep/{{ name }}
+  home: https://github.com/scikit-hep/awkward-1.0
+  summary: Manipulate JSON-like data with NumPy-like idioms.
   license: BSD-3-Clause
-  license_family: BSD
-  license_file: {{ name }}/LICENSE
-  summary: Manipulate arrays of complex data structures as easily as Numpy.
-  dev_url: https://github.com/scikit-hep/{{ name }}
+  license_file: LICENSE
 
 extra:
   recipe-maintainers:
+    - lgray
     - chrisburr
     - jpivarski
+    - henryiii
