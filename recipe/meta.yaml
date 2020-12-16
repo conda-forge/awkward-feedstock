@@ -9,13 +9,19 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/awkward-{{ version }}.tar.gz
   sha256: d856b4a166ae054363368aed2e4a44338fec069baa4242e7d567c8323ebcc1eb
+  patches:
+    - awkward-1.0.2-singlethread.patch
 
 build:
   number: 1
-  script: {{ PYTHON }} -m pip install . -vv
+  script:
+      - export CMAKE_BUILD_PARALLEL_LEVEL=${CPU_COUNT}
+      - {{ PYTHON }} -m pip install . -vvv
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cmake
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
