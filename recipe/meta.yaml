@@ -9,13 +9,13 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/awkward-{{ version }}.tar.gz
   sha256: 3468cb80cab51252a1936e5e593c7df4588ea0e18dcb6fb31e3d2913ba883928
-  patches:
-    - awkward-1.0.2-singlethread.patch
 
 build:
   number: 0
   script:
-    - export CMAKE_BUILD_PARALLEL_LEVEL=${CPU_COUNT}
+    # Travis ppc64le doesn't have enough memory to build in more than one thread.
+    - export CMAKE_BUILD_PARALLEL_LEVEL=${CPU_COUNT}  # [not (linux and ppc64le)]
+    - export CMAKE_BUILD_PARALLEL_LEVEL=1             # [linux and ppc64le]
     - {{ PYTHON }} -m pip install . -vvv
 
 requirements:
