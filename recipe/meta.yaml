@@ -1,5 +1,5 @@
 {% set name = "awkward" %}
-{% set version = "1.0.2" %}
+{% set version = "1.1.2" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/awkward-{{ version }}.tar.gz
-  sha256: 3468cb80cab51252a1936e5e593c7df4588ea0e18dcb6fb31e3d2913ba883928
+  sha256: 4ae8371d9e6d5bd3e90f3686b433cebc0541c88072655d2c75ec58e79b5d6943
 
 build:
-  number: 1
+  number: 0
   script:
     # Travis ppc64le doesn't have enough memory to build in more than one thread.
     - export CMAKE_BUILD_PARALLEL_LEVEL=${CPU_COUNT}  # [not (linux and ppc64le)]
