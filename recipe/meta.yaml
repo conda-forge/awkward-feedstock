@@ -26,6 +26,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - make  # [unix]
+    - pyyaml
   host:
     - pip
     - python
