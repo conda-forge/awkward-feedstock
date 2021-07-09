@@ -26,10 +26,10 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - make  # [unix]
-    - pyyaml
   host:
     - pip
     - python
+    - pyyaml
   run:
     - numpy >=1.13.1
     - python
