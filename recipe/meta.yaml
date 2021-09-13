@@ -1,5 +1,5 @@
 {% set name = "awkward" %}
-{% set version = "1.4.0" %}
+{% set version = "1.5.0" %}
 
 
 package:
@@ -8,7 +8,9 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/awkward-{{ version }}.tar.gz
-  sha256: 25ae6114d5962c717cb87e3bc30a2f6eaa232b252cf8c51ba805b8f04664ae0d
+  sha256: 3cb1b0e28f420232d894d89665d5c0c8241b99e56d806171f4faf5cdfec08ae1
+  patches:
+    - 0001-Respect-CMAKE_ARGS-if-set-by-the-environment.patch
 
 build:
   number: 0
