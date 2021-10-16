@@ -9,8 +9,6 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/awkward-{{ version }}.tar.gz
   sha256: c0357c62223fefcfc7a7565389dbd4db900623bf10eccf2bc8e87586ec59b38d
-  patches:
-    - 0001-Respect-CMAKE_ARGS-if-set-by-the-environment.patch
 
 build:
   number: 0
