@@ -11,6 +11,7 @@ source:
   sha256: 6655fa22d1b1d1dcb9ccee0d502350ab90c53467a10b540b7624422b594d2e72
   patches:
     - externpybind11.patch
+    - newsetuptools.patch
 
 build:
   number: 1
