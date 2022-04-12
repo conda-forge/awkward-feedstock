@@ -16,10 +16,11 @@ build:
   number: 1
   script:
     # Travis ppc64le doesn't have enough memory to build in more than one thread.
-    - export CMAKE_BUILD_PARALLEL_LEVEL=${CPU_COUNT}                # [unix and (not (linux and ppc64le))]
-    - export CMAKE_BUILD_PARALLEL_LEVEL=1                           # [linux and ppc64le]
-    - set CMAKE_BUILD_PARALLEL_LEVEL=%CPU_COUNT%                    # [win]
-    - set CMAKE_ARGS="%CMAKE_ARGS% -DAWKWARD_EXTERNAL_PYBIND11=ON"  # [win]
+    - export CMAKE_BUILD_PARALLEL_LEVEL=${CPU_COUNT}                  # [unix and (not (linux and ppc64le))]
+    - export CMAKE_BUILD_PARALLEL_LEVEL=1                             # [linux and ppc64le]
+    - export CMAKE_ARGS="$CMAKE_ARGS -DAWKWARD_EXTERNAL_PYBIND11=ON"  # [linux]
+    - set CMAKE_BUILD_PARALLEL_LEVEL=%CPU_COUNT%                      # [win]
+    - set CMAKE_ARGS="%CMAKE_ARGS% -DAWKWARD_EXTERNAL_PYBIND11=ON"    # [win]
     - python -m pip install . -vvv
 
 requirements:
