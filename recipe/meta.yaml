@@ -37,6 +37,7 @@ requirements:
     - pybind11
     - python
     - pyyaml
+    - setuptools <62.1.0
   run:
     - numpy >=1.13.1
     - python
