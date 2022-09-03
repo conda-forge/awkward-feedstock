@@ -38,6 +38,7 @@ requirements:
     - setuptools
   run:
     - numpy >=1.13.1
+    - python
     - setuptools
 
 test:
