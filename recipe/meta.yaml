@@ -9,8 +9,6 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/awkward-{{ version }}.tar.gz
   sha256: 1d89c7244e6184b35f4bce6bd08ff82eb2ef60be67f572923bc6aaee35dab544
-  patches:
-    - externpybind11.patch
 
 build:
   number: 0
@@ -37,11 +35,12 @@ requirements:
     - pybind11
     - python
     - pyyaml
-    - setuptools <62.1.0
-  run:
-    - numpy >=1.13.1
-    - python
     - setuptools
+  run:
+    - numpy >=1.14.5
+    - python
+    - importlib_resources  # [py<39]
+    - packaging
 
 test:
   imports:
