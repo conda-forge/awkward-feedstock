@@ -39,7 +39,8 @@ requirements:
   run:
     - numpy >=1.13.1
     - python
-    - setuptools
+    - packaging
+    - importlib_resources  # [py<3.9]
 
 test:
   imports:
