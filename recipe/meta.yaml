@@ -40,7 +40,7 @@ requirements:
     - numpy >=1.13.1
     - python
     - packaging
-    - importlib_resources  # [py<3.9]
+    - importlib_resources  # [py<39]
 
 test:
   imports:
