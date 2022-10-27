@@ -11,7 +11,7 @@ source:
   sha256: c6394ed25fb14a086d63621d9d84fdc228f5d42a64586f215731b36fde17034b
 
 build:
-  number: 0
+  number: 1
   script:
     # Travis ppc64le doesn't have enough memory to build in more than one thread.
     - export CMAKE_BUILD_PARALLEL_LEVEL=${CPU_COUNT}                  # [unix and (not (linux and ppc64le))]
