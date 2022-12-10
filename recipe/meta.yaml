@@ -11,36 +11,22 @@ source:
   sha256: 3782b34643083d6ee7644e9fdb3daeafc4b6030a667f219fd61cb7b234976b68
 
 build:
+  noarch: python
   number: 0
-  script:
-    # Travis ppc64le doesn't have enough memory to build in more than one thread.
-    - export CMAKE_BUILD_PARALLEL_LEVEL=${CPU_COUNT}                  # [unix and (not (linux and ppc64le))]
-    - export CMAKE_BUILD_PARALLEL_LEVEL=1                             # [linux and ppc64le]
-    - export CMAKE_ARGS="$CMAKE_ARGS -DAWKWARD_EXTERNAL_PYBIND11=ON"  # [unix]
-    - set CMAKE_BUILD_PARALLEL_LEVEL=%CPU_COUNT%                      # [win]
-    - set CMAKE_ARGS="%CMAKE_ARGS% -DAWKWARD_EXTERNAL_PYBIND11=ON"    # [win]
-    - python -m pip install . -vvv
 
 requirements:
-  build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - pyyaml                                 # [build_platform != target_platform]
-    - cmake
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
-    - make  # [unix]
   host:
     - pip
-    - pybind11
-    - python
-    - pyyaml
-    - setuptools <62
+    - python >=3.7
+    - hatchling
+    - hatch-fancy-pypi-readme
   run:
-    - numpy >=1.13.1
+    - numpy >=1.14.5
+    - awkward_cpp ==2
     - python
     - packaging
     - importlib_resources  # [py<39]
+    - typing_extensions >=4.1.0 # [py<3.11]
 
 test:
   imports:
