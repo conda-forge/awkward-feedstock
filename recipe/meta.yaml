@@ -1,5 +1,5 @@
 {% set name = "awkward" %}
-{% set version = "1.10.2" %}
+{% set version = "2.0.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/awkward-{{ version }}.tar.gz
-  sha256: 303bc0919f0932db3e78a9254c17fcdeb125e4be65cd894b40dfbc3bfddfc054
+  sha256: 3782b34643083d6ee7644e9fdb3daeafc4b6030a667f219fd61cb7b234976b68
 
 build:
   number: 0
