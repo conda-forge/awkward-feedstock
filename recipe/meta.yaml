@@ -25,8 +25,8 @@ requirements:
     - awkward_cpp ==2
     - python
     - packaging
-    - importlib_resources  # [py<39]
-    - typing_extensions >=4.1.0 # [py<3.11]
+    - importlib_resources
+    - typing_extensions >=4.1.0
 
 test:
   imports:
