@@ -51,3 +51,5 @@ extra:
     - jpivarski
     - henryiii
     - agoose77
+    - conda-forge/scikit-hep
+    - ioanaif
