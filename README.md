@@ -1,11 +1,11 @@
-About awkward
-=============
+About awkward-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/awkward-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/scikit-hep/awkward-1.0
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/awkward-feedstock/blob/main/LICENSE.txt)
 
 Summary: Manipulate JSON-like data with NumPy-like idioms.
 
@@ -393,8 +393,11 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@agoose77](https://github.com/agoose77/)
 * [@chrisburr](https://github.com/chrisburr/)
+* [@conda-forge/scikit-hep](https://github.com/conda-forge/scikit-hep/)
 * [@henryiii](https://github.com/henryiii/)
+* [@ioanaif](https://github.com/ioanaif/)
 * [@jpivarski](https://github.com/jpivarski/)
 * [@lgray](https://github.com/lgray/)
 
