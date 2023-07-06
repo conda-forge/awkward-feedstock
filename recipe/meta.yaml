@@ -24,7 +24,7 @@ requirements:
     - hatch-fancy-pypi-readme
   run:
     - python >=3.8
-    - awkward-cpp ==20
+    - awkward-cpp ==21
     - importlib_resources
     - numpy >=1.18.0
     - packaging
