@@ -1,5 +1,5 @@
 {% set name = "awkward" %}
-{% set version = "2.3.2" %}
+{% set version = "2.3.3" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/awkward-{{ version }}.tar.gz
-  sha256: 365467b7eecc869fe1e34ef6ef9214b28e5fd1257b16f629d863d21045c9094c
+  sha256: 66a454184c91efba071f4a0574bfe57f4e50a0d5d9bd4931edfd429139242bb8
 
 build:
   noarch: python
@@ -39,10 +39,12 @@ test:
     - pip
 
 about:
-  home: https://github.com/scikit-hep/awkward-1.0
+  home: https://github.com/scikit-hep/awkward
   summary: Manipulate JSON-like data with NumPy-like idioms.
   license: BSD-3-Clause
   license_file: LICENSE
+  dev_url: https://github.com/scikit-hep/awkward
+  doc_url: https://awkward-array.org/doc/main/
 
 extra:
   recipe-maintainers:
