@@ -3,11 +3,15 @@ About awkward-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/awkward-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/scikit-hep/awkward-1.0
+Home: https://github.com/scikit-hep/awkward
 
 Package license: BSD-3-Clause
 
 Summary: Manipulate JSON-like data with NumPy-like idioms.
+
+Development: https://github.com/scikit-hep/awkward
+
+Documentation: https://awkward-array.org/doc/main/
 
 Current build status
 ====================
