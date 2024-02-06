@@ -1,5 +1,5 @@
 {% set name = "awkward" %}
-{% set version = "2.6.0" %}
+{% set version = "2.6.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/awkward-{{ version }}.tar.gz
-  sha256: bef3f32e2165cf336132ed7bbdf4799a31dc68c1f5934e7825b318b77b890666
+  sha256: e33ced53cb588fb297a07b919c8919dcd87f0cc2da00a7388bc77e042b0511d9
 
 build:
   noarch: python
@@ -29,7 +29,7 @@ requirements:
     - numpy >=1.18.0
     - packaging
     - typing_extensions
-    - fsspec
+    - fsspec >=2022.11.0
 
 test:
   imports:
