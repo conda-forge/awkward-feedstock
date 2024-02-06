@@ -29,6 +29,7 @@ requirements:
     - numpy >=1.18.0
     - packaging
     - typing_extensions
+    - fsspec
 
 test:
   imports:
