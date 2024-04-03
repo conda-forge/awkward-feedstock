@@ -1,5 +1,5 @@
 {% set name = "awkward" %}
-{% set version = "2.6.1" %}
+{% set version = "2.6.2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/awkward-{{ version }}.tar.gz
-  sha256: e33ced53cb588fb297a07b919c8919dcd87f0cc2da00a7388bc77e042b0511d9
+  sha256: 1ad21528f96a444c409c9110ff5d7620e29296931bba85056d212c53a6372cc0
 
 build:
   noarch: python
@@ -24,7 +24,7 @@ requirements:
     - hatch-fancy-pypi-readme
   run:
     - python >=3.8
-    - awkward-cpp ==29
+    - awkward-cpp ==30
     - importlib_metadata
     - numpy >=1.18.0
     - packaging
