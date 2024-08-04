@@ -25,10 +25,10 @@ requirements:
   run:
     - python >=3.8
     - awkward-cpp ==35
-    - importlib_metadata
+    - importlib_metadata >=4.13.0
     - numpy >=1.18.0
     - packaging
-    - typing_extensions
+    - typing_extensions >=4.1.0
     - fsspec >=2022.11.0
 
 test:
