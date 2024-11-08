@@ -18,11 +18,11 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
     - hatchling >1.10.0
     - hatch-fancy-pypi-readme
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - awkward-cpp ==40
     - importlib-metadata >=4.13.0
     - numpy >=1.18.0
@@ -36,6 +36,7 @@ test:
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
