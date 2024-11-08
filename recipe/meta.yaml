@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/awkward-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/awkward-{{ version }}.tar.gz
   sha256: b85c5d3442745028ef17d3390dd2bef44ac59a0787e2a9a535481bae4b02eb78
 
 build:
