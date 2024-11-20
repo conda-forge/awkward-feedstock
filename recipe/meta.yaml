@@ -1,5 +1,5 @@
 {% set name = "awkward" %}
-{% set version = "2.7.0" %}
+{% set version = "2.7.1" %}
 {% set python_min = "3.9" %}
 
 package:
@@ -8,11 +8,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/awkward-{{ version }}.tar.gz
-  sha256: b85c5d3442745028ef17d3390dd2bef44ac59a0787e2a9a535481bae4b02eb78
+  sha256: 5d79a6436a45d5c6e8e54f0fad86c9cf9b2a9f4db2a8774f415230520fb1fc5f
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -23,7 +23,7 @@ requirements:
     - hatch-fancy-pypi-readme
   run:
     - python >={{ python_min }}
-    - awkward-cpp ==41
+    - awkward-cpp ==42
     - importlib-metadata >=4.13.0
     - numpy >=1.18.0
     - packaging
