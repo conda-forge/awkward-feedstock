@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: awkward
-  version: "2.8.6"
+  version: "2.8.7"
   python_min: "3.9"
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/awkward-${{ version }}.tar.gz
-  sha256: 86c8fceefec27e88ed21b4c46a07aee93a71f60e9c13d55978d91d9b5b7887ed
+  sha256: aebb13e5954fc17a18171d7ba9196c7ae715032648a830c196bb250da34cc67a
 
 build:
   number: 0
