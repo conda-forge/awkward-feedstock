@@ -1,15 +1,14 @@
 schema_version: 1
 
 context:
-  name: awkward
   version: "2.10.0"
 
 package:
-  name: ${{ name|lower }}
+  name: awkward
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/awkward-${{ version }}.tar.gz
+  url: https://pypi.org/packages/source/a/awkward/awkward-${{ version }}.tar.gz
   sha256: d297f8aee0263c1fd3d8ae25a61155169322298357368ffadcc6f17d9f70f38d
 
 build:
@@ -25,7 +24,7 @@ requirements:
     - hatch-fancy-pypi-readme
   run:
     - python >=${{ python_min }}
-    - awkward-cpp ==53
+    - awkward-cpp ==54
     - importlib-metadata >=4.13.0
     - numpy >=1.18.0
     - packaging
@@ -37,7 +36,9 @@ tests:
       imports:
         - awkward
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
 
 about:
   summary: Manipulate JSON-like data with NumPy-like idioms.
