@@ -148,6 +148,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@TaiSakuma](https://github.com/TaiSakuma/)
 * [@agoose77](https://github.com/agoose77/)
 * [@chrisburr](https://github.com/chrisburr/)
 * [@conda-forge/scikit-hep](https://github.com/orgs/conda-forge/teams/scikit-hep/)
