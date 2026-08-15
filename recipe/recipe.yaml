@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "2.12.0"
+  version: "2.13.0"
 
 package:
   name: awkward
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/a/awkward/awkward-${{ version }}.tar.gz
-  sha256: ce881e4826773277ddacea9ad0f0b97c080b3cee47b183c8d12a971167e53074
+  sha256: 36f127573295e1ddf65b551bf071b803ad4af21bd14519f4c4dd34953cb3efc2
 
 build:
   number: 0
