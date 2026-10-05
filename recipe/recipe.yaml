@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "2.13.0"
+  version: "2.14.0"
 
 package:
   name: awkward
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/a/awkward/awkward-${{ version }}.tar.gz
-  sha256: 36f127573295e1ddf65b551bf071b803ad4af21bd14519f4c4dd34953cb3efc2
+  sha256: f5bce2ddfd4b5ad5277462b01adf94fd6ca90c33a56949fb8c00490c30725737
 
 build:
   number: 0
@@ -24,7 +24,7 @@ requirements:
     - hatch-fancy-pypi-readme
   run:
     - python >=${{ python_min }}
-    - awkward-cpp ==56
+    - awkward-cpp ==57
     - importlib-metadata >=4.13.0
     - numpy >=1.21.3
     - packaging
